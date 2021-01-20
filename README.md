@@ -1,2 +1,2 @@
-# asgardio-react-native-oidc-sdk
-To maintain Asgardio React Native OIDC SDK
+# asgardeo-react-native-oidc-sdk
+To maintain Asgardeo React Native OIDC SDK
