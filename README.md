@@ -253,16 +253,13 @@ getAuthorizationURL(Config).then((url) => {
 ### requestAccessTokenDetails
 
 ```TypeScript
-requestAccessTokenDetails = (AuthUrl,config)
+requestAccessTokenDetails = (AuthUrl)
 ```
 
 #### Arguments
 
 1. AuthUrl
    This is a url. After the user signs in with using Identity server can get this url. It contains sessionState and authorizationCode these are obtained from identity server.
-2. config:
-   This config contains the ClientID, server Origin, SigINRedirectURL, SighOutRedirectUrl,and etc. This information needed to umplement the authentication.
-
 #### Description
 
 This method uses the authorization code and session state to send a request to the token endpoint to obtain the acess token and the id token. The sign-in functionality can be implemented by calling the getAuthorizationURL method followed by this method.
@@ -270,7 +267,7 @@ This method uses the authorization code and session state to send a request to t
 #### Example
 
 ```TypeScript
-requestAccessTokenDetails(AuthUrl,Config).then((token)=>{
+requestAccessTokenDetails(AuthUrl).then((token)=>{
     console.log(token)
 }).catch((error)=>{
     console.log(error)
@@ -382,7 +379,7 @@ const UserInfo =  await userInformation();
 ### revokeAccessToken
 
 ```TypeScript
-revokeAccessToken= async(config)
+revokeAccessToken= async()
 ```
 
 #### Description
@@ -404,7 +401,7 @@ revokeAccessToken().then((response)=>{
 ### refreshAccessToken
 
 ```TypeScript
- refreshAccessToken = async (config): Promise<TokenResponse>
+ refreshAccessToken = async (): Promise<TokenResponse>
 ```
 
 #### Description
@@ -414,7 +411,7 @@ This method sends a refresh-token request and returns a promise that resolves wi
 #### Example
 
 ```TypeScript
-refreshAccessToken(Config).then((response)=>{
+refreshAccessToken().then((response)=>{
     console.log(response);
 }).catch((error)=>{
     console.error(error);
